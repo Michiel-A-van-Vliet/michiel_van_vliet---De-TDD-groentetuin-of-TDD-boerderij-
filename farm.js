@@ -8,21 +8,12 @@ function getYieldForCrop(input) {
   return input.crop.yield * input.numCrops;
 }
 
-function getTotalYield(crops) {
-  console.log(crops);
+function getTotalYield(somehowAnObject) {
+  var total = 0;
+  somehowAnObject.crops.forEach((subObject) => {
+    total += subObject.numCrops * subObject.crop.yield;
+  });
+  return total;
 }
 
 module.exports = { getYieldForPlant, getYieldForCrop, getTotalYield };
-
-// const corn = {
-//     name: "corn",
-//     yield: 3,
-//   };
-//   const pumpkin = {
-//     name: "pumpkin",
-//     yield: 4,
-//   };
-//   const crops = [
-//     { crop: corn, numCrops: 5 },
-//     { crop: pumpkin, numCrops: 2 },
-//   ];
