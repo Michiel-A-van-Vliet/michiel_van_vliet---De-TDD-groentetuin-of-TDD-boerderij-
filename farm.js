@@ -16,4 +16,36 @@ function getTotalYield(somehowAnObject) {
   return total;
 }
 
-module.exports = { getYieldForPlant, getYieldForCrop, getTotalYield };
+// getCostsForCrop
+function getCostsForCrop(params) {
+  console.log("getCostsForCrop");
+  console.log(params);
+}
+
+// getRevenueForCrop
+function getRevenueForCrop(params) {
+  console.log("getRevenueForCrop");
+  console.log(params);
+}
+
+// getProfitForCrop
+function getProfitForCrop(params) {
+  console.log("getProfitForCrop");
+  console.log(params);
+}
+
+// getTotalProfit
+function getTotalProfit(params) {
+  console.log("getTotalProfit");
+  console.log(params);
+}
+
+module.exports = {
+  getYieldForPlant,
+  getYieldForCrop,
+  getTotalYield,
+  getCostsForCrop,
+  getRevenueForCrop,
+  getProfitForCrop,
+  getTotalProfit,
+};
