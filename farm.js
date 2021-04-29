@@ -1,7 +1,7 @@
 // module.exports = { func1, func2 }
 
-function getYieldForPlant(params) {
-  // to be created
+function getYieldForPlant(plant) {
+  return plant.yield;
 }
 
 function getYieldForCrop(params) {
