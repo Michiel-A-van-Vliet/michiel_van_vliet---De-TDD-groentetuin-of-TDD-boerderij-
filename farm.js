@@ -24,10 +24,8 @@ function getRevenueForCrop(input) {
   return input.crop.yield * input.crop.sell * input.numCrops;
 }
 
-// getProfitForCrop
-function getProfitForCrop(params) {
-  console.log("getProfitForCrop");
-  console.log(params);
+function getProfitForCrop(input) {
+  return getRevenueForCrop(input) - getCostsForCrop(input);
 }
 
 // getTotalProfit

@@ -85,7 +85,6 @@ describe("getRevenueForCrop", () => {
   });
 });
 
-// getProfitForCrop
 describe("getProfitForCrop", () => {
   const corn = {
     name: "corn",
