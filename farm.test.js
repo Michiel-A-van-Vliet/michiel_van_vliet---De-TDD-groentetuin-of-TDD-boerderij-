@@ -61,6 +61,67 @@ describe("getTotalYield", () => {
 });
 
 // getCostsForCrop
+describe("getCostsForCrop", () => {
+  const corn = {
+    name: "corn",
+    cost: 10,
+  };
+  const crops = [{ crop: corn, numCrops: 5 }];
+
+  test("Get cost for plant", () => {
+    expect(getCostsForCrop(corn)).toBe(50);
+  });
+});
+
 // getRevenueForCrop
+describe("getRevenueForCrop", () => {
+  const corn = {
+    name: "corn",
+    yield: 3,
+    sell: 12,
+  };
+  const input = { crop: corn, numCrops: 5 };
+
+  test("Get revenue for crop", () => {
+    expect(getRevenueForCrop(input)).toBe(180);
+  });
+});
+
 // getProfitForCrop
+describe("getProfitForCrop", () => {
+  const corn = {
+    name: "corn",
+    yield: 3,
+    cost: 10,
+    sell: 12,
+  };
+  const input = { crop: corn, numCrops: 5 };
+
+  test("Get revenue for crop", () => {
+    expect(getProfitForCrop(input)).toBe(130);
+  });
+});
+
 // getTotalProfit
+describe("getTotalProfit", () => {
+  const corn = {
+    name: "corn",
+    yield: 3,
+    cost: 10,
+    sell: 12,
+  };
+  const pumpkin = {
+    name: "pumpkin",
+    yield: 4,
+    cost: 5,
+    sell: 30,
+  };
+  const crops = [
+    { crop: corn, numCrops: 5 },
+    { crop: pumpkin, numCrops: 2 },
+  ];
+
+  test("Get revenue for crop", () => {
+    expect(getTotalProfit({ crops })).toBe(360);
+  });
+});
