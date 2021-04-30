@@ -66,10 +66,10 @@ describe("getCostsForCrop", () => {
     name: "corn",
     cost: 10,
   };
-  const crops = [{ crop: corn, numCrops: 5 }];
+  const input = { crop: corn, numCrops: 5 };
 
   test("Get cost for plant", () => {
-    expect(getCostsForCrop(corn)).toBe(50);
+    expect(getCostsForCrop(input)).toBe(50);
   });
 });
 
