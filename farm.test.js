@@ -60,7 +60,6 @@ describe("getTotalYield", () => {
   });
 });
 
-// getCostsForCrop
 describe("getCostsForCrop", () => {
   const corn = {
     name: "corn",

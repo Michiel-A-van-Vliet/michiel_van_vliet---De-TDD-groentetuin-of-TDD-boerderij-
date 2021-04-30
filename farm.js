@@ -16,10 +16,8 @@ function getTotalYield(somehowAnObject) {
   return total;
 }
 
-// getCostsForCrop
-function getCostsForCrop(params) {
-  console.log("getCostsForCrop");
-  console.log(params);
+function getCostsForCrop(input) {
+  return input.crop.cost * input.numCrops;
 }
 
 // getRevenueForCrop
