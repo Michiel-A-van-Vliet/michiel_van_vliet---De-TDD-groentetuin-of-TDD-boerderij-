@@ -8,10 +8,10 @@ function getYieldForCrop(input) {
   return input.crop.yield * input.numCrops;
 }
 
-function getTotalYield(somehowAnObject) {
+function getTotalYield(cropsObject) {
   var total = 0;
-  somehowAnObject.crops.forEach((subObject) => {
-    total += subObject.numCrops * subObject.crop.yield;
+  cropsObject.crops.forEach((input) => {
+    total += input.numCrops * input.crop.yield;
   });
   return total;
 }
