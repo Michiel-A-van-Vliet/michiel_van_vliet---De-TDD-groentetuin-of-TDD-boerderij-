@@ -67,7 +67,7 @@ describe("getCostsForCrop", () => {
   };
   const input = { crop: corn, numCrops: 5 };
 
-  test("Get cost for plant", () => {
+  test("Get cost for crop", () => {
     expect(getCostsForCrop(input)).toBe(50);
   });
 });
@@ -94,7 +94,7 @@ describe("getProfitForCrop", () => {
   };
   const input = { crop: corn, numCrops: 5 };
 
-  test("Get revenue for crop", () => {
+  test("Get profit for crop", () => {
     expect(getProfitForCrop(input)).toBe(130);
   });
 });
@@ -118,7 +118,7 @@ describe("getTotalProfit", () => {
     { crop: pumpkin, numCrops: 2 },
   ];
 
-  test("Get revenue for crop", () => {
+  test("Get total profit", () => {
     expect(getTotalProfit({ crops })).toBe(360);
   });
 });
