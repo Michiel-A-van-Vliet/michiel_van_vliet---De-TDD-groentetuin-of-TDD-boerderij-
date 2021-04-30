@@ -28,10 +28,12 @@ function getProfitForCrop(input) {
   return getRevenueForCrop(input) - getCostsForCrop(input);
 }
 
-// getTotalProfit
-function getTotalProfit(params) {
-  console.log("getTotalProfit");
-  console.log(params);
+function getTotalProfit(cropsObject) {
+  var totalProfit = 0;
+  cropsObject.crops.forEach((input) => {
+    totalProfit += getProfitForCrop(input);
+  });
+  return totalProfit;
 }
 
 module.exports = {
