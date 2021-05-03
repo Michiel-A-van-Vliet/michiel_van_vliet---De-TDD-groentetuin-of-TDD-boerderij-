@@ -178,7 +178,7 @@ describe("getYieldForCrop with environment", () => {
 
 // getTotalYield with environment
 describe("getTotalYield with environment", () => {
-  test("Calculate total yield with multiple crops", () => {
+  test("Calculate total yield with multiple crops with low sun", () => {
     const corn = {
       name: "corn",
       yield: 30,
@@ -193,15 +193,16 @@ describe("getTotalYield with environment", () => {
     const pumpkin = {
       name: "pumpkin",
       yield: 4,
-      wind: {
-        none: 50,
-        normal: 0,
-        hard: -50,
+      factors: {
+        sun: {
+          low: -50,
+          medium: 0,
+          high: 50,
+        },
       },
     };
     const environmentFactors = {
       sun: "low",
-      wind: "hard",
     };
     const crops = [
       { crop: corn, numCrops: 10 },

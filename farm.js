@@ -12,10 +12,11 @@ function getYieldForCrop(input, environmentFactors) {
   return getYieldForPlant(input.crop, environmentFactors) * input.numCrops;
 }
 
-function getTotalYield(cropsObject) {
+function getTotalYield(cropsObject, environmentFactors) {
   var total = 0;
   cropsObject.crops.forEach((input) => {
-    total += input.numCrops * input.crop.yield;
+    // total += input.numCrops * input.crop.yield;
+    total += getYieldForCrop(input, environmentFactors);
   });
   return total;
 }
