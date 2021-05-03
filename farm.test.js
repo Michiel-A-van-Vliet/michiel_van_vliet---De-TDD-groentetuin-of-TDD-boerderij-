@@ -175,3 +175,44 @@ describe("getYieldForCrop with environment", () => {
     expect(getYieldForCrop(input, environmentFactors)).toBe(150);
   });
 });
+
+// getTotalYield with environment
+describe("getTotalYield with environment", () => {
+  test("Calculate total yield with multiple crops", () => {
+    const corn = {
+      name: "corn",
+      yield: 30,
+      factors: {
+        sun: {
+          low: -50,
+          medium: 0,
+          high: 50,
+        },
+      },
+    };
+    const pumpkin = {
+      name: "pumpkin",
+      yield: 4,
+      wind: {
+        none: 50,
+        normal: 0,
+        hard: -50,
+      },
+    };
+    const environmentFactors = {
+      sun: "low",
+      wind: "hard",
+    };
+    const crops = [
+      { crop: corn, numCrops: 10 },
+      { crop: pumpkin, numCrops: 2 },
+    ];
+    expect(getTotalYield({ crops }, environmentFactors)).toBe(154);
+  });
+});
+
+// getRevenueForCrop with environment
+
+// getProfitForCrop with environment
+
+// getTotalProfit with environment
