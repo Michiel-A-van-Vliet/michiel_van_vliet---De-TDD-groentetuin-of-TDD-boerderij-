@@ -1,7 +1,26 @@
-// module.exports = { func1, func2 }
+// Eindopdracht - De TDD groentetuin
 
-function getYieldForPlant(plant) {
-  return plant.yield;
+// function getYieldForPlant(plant, environmentFactors) {
+//   if (environmentFactors) {
+//     var multiplier = 1;
+//     for (envFactor in environmentFactors) {
+//       // console.log(plant.factors[envFactor][environmentFactors[envFactor]]);
+//       multiplier +=
+//         plant.factors[envFactor][environmentFactors[envFactor]] / 100;
+//     }
+//     return plant.yield * multiplier;
+//   } else {
+//     return plant.yield;
+//   }
+// }
+
+function getYieldForPlant(plant, environmentFactors) {
+  var multiplier = 1;
+  for (envFactor in environmentFactors) {
+    // console.log(plant.factors[envFactor][environmentFactors[envFactor]]);
+    multiplier += plant.factors[envFactor][environmentFactors[envFactor]] / 100;
+  }
+  return plant.yield * multiplier;
 }
 
 function getYieldForCrop(input) {
