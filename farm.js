@@ -32,10 +32,10 @@ function getProfitForCrop(input, environmentFactors) {
   return getRevenueForCrop(input, environmentFactors) - getCostsForCrop(input);
 }
 
-function getTotalProfit(cropsObject) {
+function getTotalProfit(cropsObject, environmentFactors) {
   var totalProfit = 0;
   cropsObject.crops.forEach((input) => {
-    totalProfit += getProfitForCrop(input);
+    totalProfit += getProfitForCrop(input, environmentFactors);
   });
   return totalProfit;
 }
