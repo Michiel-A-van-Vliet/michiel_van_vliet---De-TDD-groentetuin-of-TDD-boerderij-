@@ -176,7 +176,6 @@ describe("getYieldForCrop with environment", () => {
   });
 });
 
-// getTotalYield with environment
 describe("getTotalYield with environment", () => {
   test("Calculate total yield with multiple crops with low sun", () => {
     const corn = {
@@ -213,6 +212,28 @@ describe("getTotalYield with environment", () => {
 });
 
 // getRevenueForCrop with environment
+describe("getRevenueForCrop with environment", () => {
+  const corn = {
+    name: "corn",
+    yield: 30,
+    sell: 12,
+    factors: {
+      sun: {
+        low: -50,
+        medium: 0,
+        high: 50,
+      },
+    },
+  };
+  const environmentFactors = {
+    sun: "low",
+  };
+  const input = { crop: corn, numCrops: 5 };
+
+  test("Get revenue for crop low sun", () => {
+    expect(getRevenueForCrop(input, environmentFactors)).toBe(900);
+  });
+});
 
 // getProfitForCrop with environment
 
