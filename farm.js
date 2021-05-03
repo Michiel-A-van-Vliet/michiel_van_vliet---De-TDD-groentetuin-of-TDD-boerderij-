@@ -5,7 +5,7 @@ function getYieldForPlant(plant) {
 }
 
 function getYieldForCrop(input) {
-  return input.crop.yield * input.numCrops;
+  return getYieldForPlant(input.crop) * input.numCrops;
 }
 
 function getTotalYield(cropsObject) {
