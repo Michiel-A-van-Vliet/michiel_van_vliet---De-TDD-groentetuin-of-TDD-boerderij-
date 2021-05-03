@@ -24,8 +24,8 @@ function getCostsForCrop(input) {
   return input.crop.cost * input.numCrops;
 }
 
-function getRevenueForCrop(input) {
-  return input.crop.yield * input.crop.sell * input.numCrops;
+function getRevenueForCrop(input, environmentFactors) {
+  return getYieldForCrop(input, environmentFactors) * input.crop.sell;
 }
 
 function getProfitForCrop(input) {
