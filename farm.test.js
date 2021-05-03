@@ -211,7 +211,6 @@ describe("getTotalYield with environment", () => {
   });
 });
 
-// getRevenueForCrop with environment
 describe("getRevenueForCrop with environment", () => {
   const corn = {
     name: "corn",
@@ -236,5 +235,50 @@ describe("getRevenueForCrop with environment", () => {
 });
 
 // getProfitForCrop with environment
+describe("getProfitForCrop", () => {
+  const corn = {
+    name: "corn",
+    yield: 30,
+    cost: 10,
+    sell: 12,
+    factors: {
+      sun: {
+        low: -50,
+        medium: 0,
+        high: 50,
+      },
+    },
+  };
+  const environmentFactors = {
+    sun: "low",
+  };
+  const input = { crop: corn, numCrops: 5 };
 
-// getTotalProfit with environment
+  test("Get profit for crop", () => {
+    expect(getProfitForCrop(input, environmentFactors)).toBe(850);
+  });
+});
+
+// // getTotalProfit with environment
+// describe("getTotalProfit", () => {
+//   const corn = {
+//     name: "corn",
+//     yield: 3,
+//     cost: 10,
+//     sell: 12,
+//   };
+//   const pumpkin = {
+//     name: "pumpkin",
+//     yield: 4,
+//     cost: 5,
+//     sell: 30,
+//   };
+//   const crops = [
+//     { crop: corn, numCrops: 5 },
+//     { crop: pumpkin, numCrops: 2 },
+//   ];
+
+//   test("Get total profit", () => {
+//     expect(getTotalProfit({ crops })).toBe(360);
+//   });
+// });
