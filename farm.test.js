@@ -234,7 +234,6 @@ describe("getRevenueForCrop with environment", () => {
   });
 });
 
-// getProfitForCrop with environment
 describe("getProfitForCrop", () => {
   const corn = {
     name: "corn",
@@ -259,26 +258,53 @@ describe("getProfitForCrop", () => {
   });
 });
 
-// // getTotalProfit with environment
-// describe("getTotalProfit", () => {
-//   const corn = {
-//     name: "corn",
-//     yield: 3,
-//     cost: 10,
-//     sell: 12,
-//   };
-//   const pumpkin = {
-//     name: "pumpkin",
-//     yield: 4,
-//     cost: 5,
-//     sell: 30,
-//   };
-//   const crops = [
-//     { crop: corn, numCrops: 5 },
-//     { crop: pumpkin, numCrops: 2 },
-//   ];
+describe("getTotalProfit with environment", () => {
+  const corn = {
+    name: "corn",
+    yield: 30,
+    cost: 10,
+    sell: 12,
+    factors: {
+      wind: {
+        none: 50,
+        normal: 0,
+        hard: -50,
+      },
+      sun: {
+        low: -50,
+        medium: 0,
+        high: 50,
+      },
+    },
+  };
+  const pumpkin = {
+    name: "pumpkin",
+    yield: 4,
+    cost: 5,
+    sell: 30,
+    factors: {
+      wind: {
+        none: 50,
+        normal: 0,
+        hard: -50,
+      },
+      sun: {
+        low: -50,
+        medium: 0,
+        high: 50,
+      },
+    },
+  };
+  const crops = [
+    { crop: corn, numCrops: 5 },
+    { crop: pumpkin, numCrops: 2 },
+  ];
+  const environmentFactors = {
+    sun: "high",
+    wind: "none",
+  };
 
-//   test("Get total profit", () => {
-//     expect(getTotalProfit({ crops })).toBe(360);
-//   });
-// });
+  test("Get total profit for a very lucky farmer", () => {
+    expect(getTotalProfit({ crops }, environmentFactors)).toBe(4020);
+  });
+});
