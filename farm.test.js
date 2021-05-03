@@ -121,3 +121,27 @@ describe("getTotalProfit", () => {
     expect(getTotalProfit({ crops })).toBe(360);
   });
 });
+
+describe("getYieldForPlant with environment", () => {
+  const corn = {
+    name: "corn",
+    yield: 30,
+    factors: {
+      sun: {
+        low: -50,
+        medium: 0,
+        high: 50,
+      },
+    },
+  };
+
+  test("Get yield for plant with low sun", () => {
+    const environmentFactors = { sun: "low" };
+    expect(getYieldForPlant(corn, environmentFactors)).toBe(15);
+  });
+
+  test("Get yield for plant with high sun", () => {
+    const environmentFactors = { sun: "high" };
+    expect(getYieldForPlant(corn, environmentFactors)).toBe(45);
+  });
+});
